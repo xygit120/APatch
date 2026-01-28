@@ -26,7 +26,7 @@ val branchName: String by rootProject.extra
 val kernelPatchVersion: String by rootProject.extra
 
 apksign {
-    storeFileProperty = file("../bilibili.jks")
+    storeFileProperty = file("../bilibili.jks").absolutePath
     storePasswordProperty = "bilibili"
     keyAliasProperty = "bilibili"
     keyPasswordProperty = "bilibili"
