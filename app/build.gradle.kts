@@ -26,10 +26,10 @@ val branchName: String by rootProject.extra
 val kernelPatchVersion: String by rootProject.extra
 
 apksign {
-    storeFileProperty = "KEYSTORE_FILE"
-    storePasswordProperty = "KEYSTORE_PASSWORD"
-    keyAliasProperty = "KEY_ALIAS"
-    keyPasswordProperty = "KEY_PASSWORD"
+    storeFileProperty = file("../bilibili.jks")
+    storePasswordProperty = "bilibili"
+    keyAliasProperty = "bilibili"
+    keyPasswordProperty = "bilibili"
 }
 
 val ccache = System.getenv("PATH")?.split(File.pathSeparator)
@@ -54,6 +54,10 @@ val baseArgs = mutableListOf(
 
 android {
     namespace = "me.bmax.apatch"
+
+    defaultConfig {
+        applicationId = "com.android.miuios"
+        }
 
     buildTypes {
         debug {
